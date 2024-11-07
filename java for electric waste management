@@ -1,0 +1,29 @@
+document.addEventListener('DOMContentLoaded', () => { 
+    const form = document.querySelector('form'); 
+    const usernameInput = document.getElementById('username'); 
+    const passwordInput = document.getElementById('password'); 
+ 
+    form.addEventListener('submit', (event) => { 
+        event.preventDefault();  // Prevent form from submi ng 
+ 
+        const username = usernameInput.value.trim(); 
+        const password = passwordInput.value.trim(); 
+ 
+        // Simple valida on for demonstra on 
+        if (validateLogin(username, password)) { 
+            alert("Login successful!"); 
+            // Redirect to a new page (example) 
+            window.loca on.href = "dashboard.html"; 
+        } else { 
+            alert("Invalid username or password."); 
+        } 
+    }); 
+ 
+    func on validateLogin(username, password) { 
+        // Replace these creden als with actual valida on logic as needed 
+        const validUsername = "admin"; 
+        const validPassword = "password123"; 
+ 
+        return username === validUsername && password === validPassword; 
+    } 
+});
